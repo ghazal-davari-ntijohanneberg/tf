@@ -3,12 +3,60 @@ html lang="en"
   head
     meta charset="UTF-8"/
     meta name="viewport" content="width=device-width, initial-scale=1.0"/
-    link rel="stylesheet" href="/css/style.css"/
+    link rel="stylesheet" href="css/style.css"/
     title Document
   body
     nav
       a href="/" Register
       a href="/showlogin" Login
+    header
+        a.logo[href="#"]
+          | Travelocity
+        nav
+          ul#link_list
+            li
+          a.active[href="index.slim"]
+            | Home
+          li
+          a[href="offers.slim"]
+            | Special offers
     h1 Welcome to travelocity!
-
     == yield
+    footer
+  section.waves
+    #wave1.wave
+    #wave2.wave
+    #wave3.wave
+    #wave4.wave
+  section.footer-col
+    ul.social-links
+      li
+    a[href="#"]
+      ion-icon[name="logo-facebook"]
+    li
+    a[href="#"]
+      ion-icon[name="logo-twitter"]
+    li
+    a[href="#"]
+      ion-icon[name="logo-linkedin"]
+    li
+    a[href="#"]
+      ion-icon[name="logo-instagram"]
+    ul.menu
+      li
+    a[href="index.html"]
+      | Home
+    li
+    a[href="about.html"]
+      | About
+    li
+    a[href="#"]
+      | Services
+    li
+    a[href="about.html"]
+      | Team
+    li
+    a[href="#"]
+      | Contact
+script[type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"]
+script[src="js/script.js"]
