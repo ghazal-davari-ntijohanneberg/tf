@@ -14,7 +14,6 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows:  110px auto auto auto auto;
     grid-template-areas:
-    "hea hea hea hea"
     "sec sec sec sec"
     "se1 se1 se1 se1"
     "se2 se2 se2 se2"

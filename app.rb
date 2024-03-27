@@ -39,7 +39,7 @@ get('/mypage') do
     id = session[:id].to_i
     db = SQLite3::Database.new('db/wsprojekt.db')
     db.results_as_hash = true
-    result = db.execute("SELECT * FROM Countries WHERE country_id = ?", id)
+    result = db.execute("SELECT * FROM Countries WHERE country-id = ?", id)
     slim(:"/mypage/index", locals:{mypage:result})
 end
 
@@ -60,4 +60,8 @@ post('/users/new') do
         db.execute("INSERT INTO users (username, pwdigest) VALUES (?,?)", username, password_digest)
         redirect('/')
     end
+end
+
+get ("/offers") do 
+    slim(:offers)
 end
