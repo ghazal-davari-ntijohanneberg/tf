@@ -6,87 +6,102 @@ html lang="en"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     title Tours
     link rel="stylesheet" href="css/style.css"
-    link rel="stylesheet" href="css/style.css"
   body
     #grid_tours
       section#section_attractions
       section.bg-text
         h2.intro-lead-in All our destinations
-        section.intro-heading Discover more of the world
+        section.intro-heading  Discover more of the world
         button.destination_btn1 Summer Destinations
-          span.arrow >
+          >
         button.destination_btn2 Winter Destinations
-          span.arrow >
+          >
       section#section_categories
         h3 Winter Destinations
         section.categories
           article.card
-            img.img_tours src="img/offers/spain.jpg" alt="picture of stairs"
+            img.img_tours(src="img/offers/spain.jpg" alt="picture of stairs")
             section.container
-              h4.h4_countries b Spain
+              h4.h4_countries Spain
               p On two wheels through Barcelona
               section.button_section
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="8") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
-            img.img_tours src="img/offers/turkiet.jpg" alt="picture of turkey"
+            img.img_tours(src="img/offers/turkiet.jpg" alt="picture of turkey")
             section.container
-              h4.h4_countries b Turkey
+              h4.h4_countries Turkey
               p 7 reasons to choose Antalya in winter
               section.button_section
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="6") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
-            img.img_tours src="img/offers/burj_khalifa1.jpg" alt="picture of burj khalifa"
+            img.img_tours(src="img/offers/burj_khalifa1.jpg" alt="picture of burj khalifa")
             section.container
-              h4.h4_countries b UAE
+              h4.h4_countries UAE
               p Travel tips for Dubai
               section#button_section1
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="7") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
-            img.img_tours src="img/offers/Iran.jpg" alt="picture of iran"
+            img.img_tours(src="img/offers/Iran.jpg" alt="picture of iran")
             section.container
-              h4.h4_countries b Iran
+              h4.h4_countries Iran
               p Highlights of Shiraz
               section#button_section2
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="3") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
-            img.img_tours src="img/offers/india.jpg" alt="picture of india"
+            img.img_tours(src="img/offers/india.jpg" alt="picture of india")
             section.container
-              h4.h4_countries b India
+              h4.h4_countries India
               p Exciting tours in India
               section#button_section3
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="4") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
       section#section-categories2
         h3 Summer Destinations
         section.categories
           article.card
-            img.img_tours src="img/offers/england.jpg" alt="picture of england"
+            img.img_tours(src="img/offers/england.jpg" alt="picture of england")
             section.container
-              h4.h4_countries b England
+              h4.h4_countries England
               p Adventure on the double-decker buses
               section.button_section
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="1") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
-            img.img_tours src="img/offers/france.jpg" alt="picture of azadi"
+            img.img_tours(src="img/offers/france.jpg" alt="picture of azadi")
             section.container
-              h4.h4_countries b France
+              h4.h4_countries France
               p 10 favorites in Paris
               section#button_section4
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="5") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
-            img.img_tours src="img/offers/sweden.jpg" alt="picture of sweden"
+            img.img_tours(src="img/offers/sweden.jpg" alt="picture of sweden")
             section.container
-              h4.h4_countries b Sweden
+              h4.h4_countries Sweden
               p Dream trip to Stockholm
               section#button_section5
                 button.read_more_btn Read more
-                button.book_flight_btn Book flight
+              form(action="/add_to_travel_plan" method="post")
+                input(type="hidden" name="country_id" value="9") 
+                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
       section#travel-tips
         h2 Travel Tips
         article.tip
@@ -94,10 +109,10 @@ html lang="en"
             h3 Tip 1: Pack Light
             p When traveling, try to pack only the essentials. This will make your journey more comfortable and save you from carrying heavy luggage.
           figure.tip-image
-            img src="img/packing.jpg" alt="picture of packing"
+            img(src="img/packing.jpg" alt="picture of packing")
         article.tip
           figure.tip-image
-            img src="img/local.jpg" alt="picture of local business"
+            img(src="img/local.jpg" alt="picture of local business")
           section.tip-content
             h3 Tip 2: Research Local Customs
             p Before visiting a new destination, take some time to learn about the local customs and traditions. This will help you show respect and avoid any cultural misunderstandings.
@@ -106,4 +121,4 @@ html lang="en"
             h3 Tip 3: Stay Hydrated
             p Traveling can be tiring, so remember to drink plenty of water to stay hydrated. Carry a refillable water bottle with you and refill it whenever possible.
           figure.tip-image
-            img src="img/water.jpg" alt="picture of water"
+            img(src="img/water.jpg" alt="picture of water")

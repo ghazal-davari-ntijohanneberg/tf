@@ -17,7 +17,7 @@ end
 get('/showlogin') do
     slim(:login)
 end
-
+  
 post('/login') do
     username = params[:username]
     password = params[:password]
@@ -29,6 +29,7 @@ post('/login') do
 
     if BCrypt::Password.new(pwdigest) == password
         session[:id] = id
+        session[:username] = username
         redirect('/mypage')
     else
         "Wrong password"
@@ -39,7 +40,7 @@ get('/mypage') do
     id = session[:id].to_i
     db = SQLite3::Database.new('db/wsprojekt.db')
     db.results_as_hash = true
-    result = db.execute("SELECT * FROM Countries WHERE country-id = ?", id)
+    result = db.execute("SELECT * FROM Travels WHERE travel-id = ?", id)
     slim(:"/mypage/index", locals:{mypage:result})
 end
 
@@ -64,4 +65,13 @@ end
 
 get ("/offers") do 
     slim(:offers)
+end
+
+post ('/add_to_travel_plan') do
+    country_id = params[:country_id].to_i
+    user_id = session[:user_id]
+    
+    db.execute("INSERT INTO Travels (country_id, user_id) VALUES (?, ?)", country_id, user_id)
+    
+    redirect '/mypage'
 end

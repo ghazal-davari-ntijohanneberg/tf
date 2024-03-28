@@ -12,6 +12,8 @@ html lang="en"
         a.logo[href="#"]
           | Travelocity
         ul#link_list
+          - if session[:username]
+            p Welcome, #{session[:username]}!
           li
             a.active[href="/"]
               |Home
