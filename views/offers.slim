@@ -26,9 +26,10 @@ html lang="en"
               p On two wheels through Barcelona
               section.button_section
                 button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="8") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="8") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
             img.img_tours(src="img/offers/turkiet.jpg" alt="picture of turkey")
             section.container
@@ -36,9 +37,10 @@ html lang="en"
               p 7 reasons to choose Antalya in winter
               section.button_section
                 button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="6") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="6") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
             img.img_tours(src="img/offers/burj_khalifa1.jpg" alt="picture of burj khalifa")
             section.container
@@ -46,9 +48,10 @@ html lang="en"
               p Travel tips for Dubai
               section#button_section1
                 button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="7") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="7") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
             img.img_tours(src="img/offers/Iran.jpg" alt="picture of iran")
             section.container
@@ -56,19 +59,21 @@ html lang="en"
               p Highlights of Shiraz
               section#button_section2
                 button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="3") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="3") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
             img.img_tours(src="img/offers/india.jpg" alt="picture of india")
             section.container
               h4.h4_countries India
               p Exciting tours in India
               section#button_section3
-                button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="4") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                button.read_more_btn Read more'
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="4") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
       section#section-categories2
         h3 Summer Destinations
         section.categories
@@ -79,9 +84,10 @@ html lang="en"
               p Adventure on the double-decker buses
               section.button_section
                 button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="1") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="1") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
             img.img_tours(src="img/offers/france.jpg" alt="picture of azadi")
             section.container
@@ -89,9 +95,10 @@ html lang="en"
               p 10 favorites in Paris
               section#button_section4
                 button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="5") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="5") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
           article.card
             img.img_tours(src="img/offers/sweden.jpg" alt="picture of sweden")
             section.container
@@ -99,9 +106,10 @@ html lang="en"
               p Dream trip to Stockholm
               section#button_section5
                 button.read_more_btn Read more
-              form(action="/add_to_travel_plan" method="post")
-                input(type="hidden" name="country_id" value="9") 
-                button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
+                - if session[:user_id]
+                    form(action="/add_to_travel_plan" method="post")
+                        input(type="hidden" name="country_id" value="9") 
+                        button.book_flight_btn (type="submit" class="add_to_plan_btn") Add to Travel Plan
       section#travel-tips
         h2 Travel Tips
         article.tip

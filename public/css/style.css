@@ -12,9 +12,8 @@
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows:  110px auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas:
-    "hea hea hea hea"
     "sec sec sec sec"
     "se1 se1 se1 se1"
     "se2 se2 se2 se2"
@@ -47,15 +46,22 @@ grid-area: hea;
 background-color: #BBD0FF;
 align-items: center; 
 display: flex;
-flex-direction: row;
 }
 
 #link_list {
-height: 100px;
+display: flex;
+flex-direction: row;
 width: 75%;
-top: 0px;
-transition: none;
+justify-content: space-around;
 }
+
+header a:hover{
+    background-color: #fff;
+    transition: .5s all ease;
+    border-radius: 30px;
+    padding: 10px;
+}
+
 
 #plane_picture{
 grid-area: sec;
@@ -207,249 +213,251 @@ list-style: none;
 
 
 #grid_tours{
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 110px 400px auto auto auto auto;
-    grid-template-areas: 
-    "hea hea hea hea"
-    "sec sec sec sec"
-    "se1 se1 se1 se1"
-    "se2 se2 se2 se2"
-    "se3 se3 se3 se3"
-    "foo foo foo foo";
-  }
-  
-  #section_attractions{
-    grid-area: sec;
-    background-image: url("../img/nature/sea.jpg");
-    background-position: center;
-    background-size: cover;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    flex-wrap: wrap;
-  }
-  
-  .bg-text {
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0, 0.4);
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: absolute;
-    top: 44%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 60%;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .destination_btn2 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #caf0f8;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .destination_btn1{
-    margin: 10px 0 10px 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #e9eba3;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .destination_btn1:hover, .destination_btn2:hover{
-    box-shadow: inset 0 0 5px rgba(0, 0, 0.5, 0.5);
-  }
-  
-  .arrow {
-    margin-left: 5px;
-  }
-  
-  #attraction_pic{
-    width: 600px;
-    height: 350px;
-    border-radius: 20px;
-    border: 3px outset purple;
-  }
-  
-  #travel-tips {
-    padding: 20px;
-    grid-area: se3;
-    background-color: #caf0f8;
-  }
-  
-  #travel-tips h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .tip {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 40px;
-  }
-  
-  .tip-content {
-    flex-basis: 50%;
-    order: 1;
-  }
-  
-  .tip-image {
-    flex-basis: 40%;
-    order: 2;
-  }
-  
-  .tip:nth-child(even) .tip-content {
-    order: 2;
-  }
-  
-  .tip:nth-child(even) .tip-image {
-    order: 1;
-  }
-  
-  .tip-content h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .tip-content p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  
-  .tip-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  
-  h3{
-    font-size: 40px;
-  }
-  
-  #section_categories {
-    grid-area: se1;
-    background-color: #caf0f8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  .categories {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    height: 100%;
-  }
-  
-  #section-categories2{
-    grid-area: se2;
-    background-color: #caf0f8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  #categories::-webkit-scrollbar{
-    display: none;
-  } 
-  
-  .card {
-    box-shadow: 0 4px 8px 0 #00000033;
-    transition: 0.3s;
-    width: 200px;
-    height: 400px;
-  }
-  
-  .button_section{
-    display: flex;
-    flex-direction: row;
-    margin-top: 1rem;
-  }
-  
-  #button_section1{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  #button_section2{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  #button_section3{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  #button_section4{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  #button_section5{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
-  .container {
-    height: 50%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    position: relative;
-  }
-  
-  .read_more_btn,
-  .book_flight_btn {
-    display: inline-block; 
-    margin-right: 10px;
-    background-color: white;
-    border: 2px solid purple;
-    padding: 5px 10px;
-    color: black;
-    cursor: pointer;
-    font-size: 15px;
-    position: relative; 
-    z-index: 1; 
-  }
-  
-  .img_tours {
-    border-radius: 5px 5px 0 0;
-    width: 100%;
-    height: 60%;
-  }
-  
-  .h4_countries {
-    margin-top: 0;
-  }
+display: grid;
+height: 100vh;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 400px auto auto auto auto;
+grid-template-areas: 
+"sec sec sec sec"
+"se1 se1 se1 se1"
+"se2 se2 se2 se2"
+"se3 se3 se3 se3"
+"foo foo foo foo";
+}
+
+#section_attractions{
+grid-area: sec;
+background-image: url("../img/nature/sea.jpg");
+background-position: center;
+background-size: cover;
+filter: blur(5px);
+-webkit-filter: blur(5px);
+flex-wrap: wrap;
+}
+
+.bg-text {
+background-color: rgb(0,0,0); 
+background-color: rgba(0,0,0, 0.4);
+color: white;
+font-weight: bold;
+border: 3px solid #f1f1f1;
+position: absolute;
+top: 44%;
+left: 50%;
+transform: translate(-50%, -50%);
+z-index: 2;
+width: 60%;
+padding: 20px;
+text-align: center;
+}
+
+.destination_btn2 {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 10px 30px;
+font-size: 16px;
+font-weight: bold;
+background-color: #caf0f8;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.destination_btn1{
+margin: 10px 0 10px 0;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+padding: 10px 20px;
+font-size: 16px;
+font-weight: bold;
+background-color: #e9eba3;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-top: 2rem;
+display: flex;
+flex-direction: row;
+}
+
+.destination_btn1:hover, .destination_btn2:hover{
+box-shadow: inset 0 0 5px rgba(0, 0, 0.5, 0.5);
+}
+
+.arrow {
+margin-left: 5px;
+}
+
+#attraction_pic{
+width: 600px;
+height: 350px;
+border-radius: 20px;
+border: 3px outset purple;
+}
+
+#travel-tips {
+padding: 20px;
+grid-area: se3;
+background-color: #caf0f8;
+}
+
+#travel-tips h2 {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.tip {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 40px;
+}
+
+.tip-content {
+flex-basis: 50%;
+order: 1;
+}
+
+.tip-image {
+flex-basis: 40%;
+order: 2;
+}
+
+.tip:nth-child(even) .tip-content {
+order: 2;
+}
+
+.tip:nth-child(even) .tip-image {
+order: 1;
+}
+
+.tip-content h3 {
+font-size: 18px;
+margin-bottom: 10px;
+}
+
+.tip-content p {
+font-size: 16px;
+line-height: 1.5;
+}
+
+.tip-image img {
+width: 100%;
+height: auto;
+border-radius: 5px;
+}
+
+h3{
+font-size: 40px;
+}
+
+#section_categories {
+grid-area: se1;
+background-color: #caf0f8;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+}
+
+.categories {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+height: 100%;
+}
+
+#section-categories2{
+grid-area: se2;
+background-color: #caf0f8;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 20px;
+}
+
+#categories::-webkit-scrollbar{
+display: none;
+} 
+
+.card {
+box-shadow: 0 4px 8px 0 #00000033;
+transition: 0.3s;
+width: 200px;
+height: 400px;
+}
+
+.button_section{
+display: flex;
+flex-direction: row;
+margin-top: 1rem;
+}
+
+#button_section1{
+margin-top: 1rem;
+display: flex;
+flex-direction: row;
+}
+
+#button_section2{
+margin-top: 1rem;
+display: flex;
+flex-direction: row;
+}
+
+#button_section3{
+margin-top: 1rem;
+display: flex;
+flex-direction: row;
+}
+
+#button_section4{
+margin-top: 1rem;
+display: flex;
+flex-direction: row;
+}
+
+#button_section5{
+margin-top: 1rem;
+display: flex;
+flex-direction: row;
+}
+
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+height: 50%;
+display: flex;
+flex-direction: column;
+padding: 10px;
+position: relative;
+}
+
+.read_more_btn,
+.book_flight_btn {
+display: inline-block; 
+margin-right: 10px;
+background-color: white;
+border: 2px solid purple;
+padding: 5px 10px;
+color: black;
+cursor: pointer;
+font-size: 15px;
+position: relative; 
+z-index: 1; 
+}
+
+.img_tours {
+border-radius: 5px 5px 0 0;
+width: 100%;
+height: 60%;
+}
+
+.h4_countries {
+margin-top: 0;
+}

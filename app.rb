@@ -25,11 +25,12 @@ post('/login') do
     db.results_as_hash = true
     result = db.execute("SELECT * FROM users WHERE username = ?", username).first
     pwdigest = result["pwdigest"]
-    id = result["id"]
+    user_id = result["user_id"].to_i
 
     if BCrypt::Password.new(pwdigest) == password
-        session[:id] = id
+        session[:user_id] = user_id
         session[:username] = username
+        puts "Session ID: #{session[:user_id]}"
         redirect('/mypage')
     else
         "Wrong password"
@@ -37,11 +38,14 @@ post('/login') do
 end
 
 get('/mypage') do
-    id = session[:id].to_i
+    id = session[:user_id].to_i
     db = SQLite3::Database.new('db/wsprojekt.db')
     db.results_as_hash = true
-    result = db.execute("SELECT * FROM Travels WHERE travel-id = ?", id)
-    slim(:"/mypage/index", locals:{mypage:result})
+    @travels = db.execute("SELECT * FROM  Travels
+                            INNER JOIN Countries ON Travels.country_id = Countries.country_id
+                            WHERE user_id = ?",id)
+    p @travels
+    slim(:"mypage/index")
 end
 
 post('/users/new') do
@@ -56,9 +60,9 @@ post('/users/new') do
     elsif password != password_confirm
         slim (:password_mismatch_error)
     else
-        password_digest = BCrypt::Password.create(password)
+        pwdigest = BCrypt::Password.create(password)
         db = SQLite3::Database.new('db/wsprojekt.db')
-        db.execute("INSERT INTO users (username, pwdigest) VALUES (?,?)", username, password_digest)
+        db.execute("INSERT INTO users (username, pwdigest) VALUES (?,?)", username, pwdigest)
         redirect('/')
     end
 end
@@ -68,10 +72,22 @@ get ("/offers") do
 end
 
 post ('/add_to_travel_plan') do
-    country_id = params[:country_id].to_i
-    user_id = session[:user_id]
+    puts "Session ID: #{session[:user_id]}"
+    if session[:user_id].nil?
+        puts "Redirecting to login page" 
+        redirect '/showlogin'
+    else
+        country_id = params[:country_id].to_i
+        user_id = session[:user_id]
+
+        db = SQLite3::Database.new('db/wsprojekt.db')
+        db.execute("INSERT INTO Travels (country_id, user_id) VALUES (?, ?)", country_id, user_id)
     
-    db.execute("INSERT INTO Travels (country_id, user_id) VALUES (?, ?)", country_id, user_id)
-    
-    redirect '/mypage'
+        redirect '/mypage'
+    end
+end
+
+get '/logout' do
+    session.clear  
+    redirect '/'   
 end

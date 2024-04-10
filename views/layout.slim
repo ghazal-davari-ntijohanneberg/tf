@@ -12,15 +12,20 @@ html lang="en"
         a.logo[href="#"]
           | Travelocity
         ul#link_list
-          - if session[:username]
-            p Welcome, #{session[:username]}!
           li
-            a.active[href="/"]
+            a[href="/"]
               |Home
           li
             a[href="/offers"]
               |Special offers
           li 
-            a[href="/showlogin" Login]
+            a[href="/showlogin"]
               |Login
+          li 
+            - if session[:user_id]
+              a[href="/logout"]
+                |log out
+          - if session[:username]
+            a[href="/mypage"]
+              |My page 
     == yield
