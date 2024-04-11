@@ -48,12 +48,12 @@ end
 get('/mypage') do
     id = session[:user_id].to_i
     db = SQLite3::Database.new('db/wsprojekt.db')
+    country_id = params[:country_id].to_i
     db.results_as_hash = true
     @travels = db.execute("SELECT * FROM  Travels
                             INNER JOIN Countries ON Travels.country_id = Countries.country_id
                             WHERE user_id = ?",id)
-    p @travels
-    slim(:"mypage/index")
+    slim(:"mypage/index", locals: { travel: nil })
 end
 
 post('/users/new') do

@@ -137,11 +137,9 @@ grid-area: foo;
 }
 
 #info_bars{
-display: flex;
-flex-direction: column;
-margin: 0;
-width: 300px;
-flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    width: auto;
 }
 
 .p_info{
@@ -187,12 +185,13 @@ height:13px;width:13px;padding:0;
 }
 
 .tours{
-margin: 20px;
-text-align: center;
-background-color: whitesmoke;
-height: 100px;
-border-radius: 40px;
+    margin: 20px;
+    text-align: center;
+    background-color: whitesmoke;
+    height: 100px;
+    border-radius: 40px;
 }
+
 
 footer{
 grid-area: foo;
@@ -265,20 +264,17 @@ cursor: pointer;
 }
 
 .destination_btn1{
-margin: 10px 0 10px 0;
-display: inline-flex;
-align-items: center;
-justify-content: center;
-padding: 10px 20px;
-font-size: 16px;
-font-weight: bold;
-background-color: #e9eba3;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-margin-top: 2rem;
-display: flex;
-flex-direction: row;
+    margin: 10px 0 10px 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e9eba3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .destination_btn1:hover, .destination_btn2:hover{

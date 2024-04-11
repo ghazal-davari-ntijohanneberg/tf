@@ -3,6 +3,10 @@
 h2 Here are your travel plans: 
 
 - @travels.each do |name|
-    p = name["name"]
-    form action="Travels/#{name["country_id"]}/delete" method="post"
+    h3 = name["name"]
+    form action="Travels/#{name["country_id"]}/delete" method="post"                                                                                                                                           
       input type="submit" value="Delete"
+ul
+  - if travel
+    - travel.each do |attribute|
+      li = attribute["name"]
