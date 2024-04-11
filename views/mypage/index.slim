@@ -1,0 +1,8 @@
+- if session[:username]
+    h1 Welcome, #{session[:username]}!
+h2 Here are your travel plans: 
+
+- @travels.each do |name|
+    p = name["name"]
+    form action="Travels/#{name["country_id"]}/delete" method="post"
+      input type="submit" value="Delete"
